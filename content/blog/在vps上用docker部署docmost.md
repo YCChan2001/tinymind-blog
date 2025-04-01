@@ -3,7 +3,9 @@ title: Docmost
 date: 2025-04-01T06:08:45.831Z
 ---
 
+
 #VPS #Docker #Docmost
+
 docker-compose.yml 文件是一个 YAML 格式的文本文件，用于定义 Docker Compose 应用程序的配置。
 
 1. 进入和编辑：
