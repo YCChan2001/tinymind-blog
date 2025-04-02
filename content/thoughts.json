@@ -1,5 +1,10 @@
 [
   {
+    "id": "1743572287809",
+    "content": "![1743572175390.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-02/1743572182329.png?raw=true)",
+    "timestamp": "2025-04-02T05:38:07.809Z"
+  },
+  {
     "id": "1743571905875",
     "content": "CDN工作流程：\n![image.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-02/1743571754022.png?raw=true)\n\n\n1.用户A尝试通过图片URL获取image.png。这个URL的域名是由CDN提供商提供，以下两个图像URL是用于演示URL在Amazon和Akamai CDN上的示例：\nhttps://mysite.cloudfront.net/logo.jpg\n\nhttps://mysite.akamai.com/image-manager/img/logo.jpg\n\n2.如果CDN服务器缓存中没有这个图片image.png，CDN服务器会从源（可以是Web服务器或在线存储，如Amazon S3）请求文件。\n\n3.源返回image.png给CDN服务器，并包含可选的HTTP头部Time-to-Live（TTL），它表示图像被缓存的时间有多长。\n\n4.CDN缓存图像并将其返回给用户A。在TTL过期之前，图像一直被缓存在CDN中。\n\n5.用户B发送一个请求获取相同的图片\n\n6.只要TTL尚未过期，图像就会从缓存中返回。",
     "timestamp": "2025-04-02T05:31:45.875Z"
