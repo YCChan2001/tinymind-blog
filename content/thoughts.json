@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "id": "1743568575436",
+    "content": "单服务器：\n![1743566066896.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-02/1743566138644.png?raw=true)\n1.用户通过域名访问网站，例如api.mysite.com。通常，域名系统（DNS）是由第三方提供的付费服务，而不是由我们的服务器托管。\n\n2.Internet Protocol（IP）地址被返回给浏览器或移动应用程序。在这个例子中，返回的IP地址是15.125.23.214。\n\n3.一旦获得了IP地址，就会直接向您的Web服务器发送超文本传输协议（HTTP）[1]请求。\n\n4.Web服务器返回用于渲染的HTML页面或JSON响应。",
+    "timestamp": "2025-04-02T04:36:15.436Z"
+  }
+]
