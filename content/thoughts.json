@@ -1,5 +1,10 @@
 [
   {
+    "id": "1744214134863",
+    "content": "一些markdown语法\n\n* **段落**：直接输入文字，段落间空一行。\n* **换行**：行尾添加两个空格或空一行。\n\n段内换行是shift+回车键，而换段落是回车键\n\n\n\n-+空格 = 无序列表\n\n- 无序列表\n\t- 子项\n\n> ‘>’一级引用 多行需每行加 `>`\n\n> > ‘>’二级引用\n\n\n\n`反引号` ``\n\n用三个反引号 ````` 包裹，并指定语言（可选）：\n\n```python\ndef hello():\n    print(\"Hello Markdown!\")\n```\n\n用 `- [ ]` 或 `- [x]` 标记未完成/已完成任务：\n\n```markdown\n- [x] 写大纲\n- [ ] 写正文\n```\n\n- [x] 写大纲\n- [ ] 写正文\n\n![替代文本](图片URL \"标题（可选）\")\n\n![熊猫](https://example.com/panda.jpg \"可爱的熊猫\")\n\n![Logo][logo] [logo]: /assets/logo.png \"公司Logo\"\n\nMarkdown允许直接插入HTML标签，用于精细控制样式：\n\n```markdown\n这是<span style=\"color:red\">红色文字</span>。\n<u>下划线</u>或<small>小号字</small>。\n```\n\n<span style=\"color:red\">红色文字</span>\n\n<u>下划线</u>或<small>小号字</small>\n\n\n\n#### 自动生成目录**（部分**工!具!**支持）\n\n使用 `[TOC]` 或特定标记（如Typora）：\n\n```markdown\n## 目录\n[TOC]\n\n## 第一章...\n```\n\n````\n```diff\n- 删除的行\n+ 新增的行\n```\n````\n\n1. 用HTML标签为文字添加绿色背景（`<span style=\"background:lightgreen\">`）\n\n\n\n<span style=\"background:lightgreen\">绿色背景</span>\n\n",
+    "timestamp": "2025-04-09T15:55:34.863Z"
+  },
+  {
     "id": "1743648970583",
     "content": "一致性哈希\n\n\n![1743648611337.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-03/1743648899402.png?raw=true)\n\n\n一致性哈希的好处包括：\n\n1.当服务器被添加或删除时，很小一部分的键被重新分配。\n\n2.容易水平扩展，因为数据分布更加均匀。\n\n3.缓解热点健问题。 \n\n4.对特定分片的过度访问可能会导致服务器过载。 想象一下 Katy Perry、Justin Bieber 和 Lady Gaga 的数据最终都在同一个分片上。 一致性哈希通过更均匀地分配数据来缓解这个问题。\n\n一致性哈希广泛用于现实世界的系统，包括一些著名的系统：\n\n亚马逊 Dynamo 数据库的分区组件\n\nApache Cassandra 中跨集群的数据分区\n\nDiscord 聊天应用\n\nAkamai 内容分发网络\n\nMaglev 网络负载均衡器",
     "timestamp": "2025-04-03T02:56:10.583Z"
