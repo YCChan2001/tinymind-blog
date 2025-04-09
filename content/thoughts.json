@@ -1,5 +1,10 @@
 [
   {
+    "id": "1744216548370",
+    "content": "> 301重定向。  \n301重定向表明，请求的URL被 \"永久 \"地移到了长URL上。由于是永久重定向，浏览器会缓存响应，对同一URL的后续请求将不会被发送到URL缩短服务上。相反，请求将直接被重定向到长网址服务器。  \n302重定向。  \n302重定向意味着URL被 \"暂时 \"移到长URL上，这意味着对同一URL的后续请求将首先被发送到URL缩短服务上。然后，它们会被重定向到长网址服务器。  \n如果优先考虑减少服务器负载，使用301重定向是有意义的，因为只有同一URL的第一个请求被发送到URL缩短服务器。然而，如果分析是重要的，302重定向是一个更好的选择，因为它可以更容易地跟踪点击率和点击的来源。\n\n![image.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-09/1744216331525.png?raw=true)  \n\n1.longURL 是输入的  \n2.系统检查 longURL 是否存在于数据库中  \n3.如果是的话，这意味着longURL之前被转换为shortURL。在这种情况下，从数据库中获取shortURL并将其返回给客户端。  \n4.如果不是，longURL是新的。一个新的唯一ID（主键）由唯一ID生成器生成。  \n5.使用base 62转换将ID转换为shortURL。  \n6.用ID、shortURL和longURL创建一个新的数据库记录。\n\n为了使流程更容易理解，让我们看一个具体的例子。  \n1.假设输入的longURL是：https://en.wikipedia.org/wiki/Systems_design  \n2.唯一ID生成器返回ID：2009215674938  \n3.使用62进制转换将ID转换为shortURL。ID（2009215674938）被转换为 \"zn9edcu\"。  \n4.将ID、shortURL和longURL保存到数据库。\n\n\n---https://learning-guide.gitbook.io/ ",
+    "timestamp": "2025-04-09T16:35:48.370Z"
+  },
+  {
     "id": "1744214134863",
     "content": "一些markdown语法\n\n* **段落**：直接输入文字，段落间空一行。\n* **换行**：行尾添加两个空格或空一行。\n\n段内换行是shift+回车键，而换段落是回车键\n\n\n\n-+空格 = 无序列表\n\n- 无序列表\n\t- 子项\n\n> ‘>’一级引用 多行需每行加 `>`\n\n> > ‘>’二级引用\n\n\n\n`反引号` ``\n\n用三个反引号 ````` 包裹，并指定语言（可选）：\n\n```python\ndef hello():\n    print(\"Hello Markdown!\")\n```\n\n用 `- [ ]` 或 `- [x]` 标记未完成/已完成任务：\n\n```markdown\n- [x] 写大纲\n- [ ] 写正文\n```\n\n- [x] 写大纲\n- [ ] 写正文\n\n![替代文本](图片URL \"标题（可选）\")\n\n![熊猫](https://example.com/panda.jpg \"可爱的熊猫\")\n\n![Logo][logo] [logo]: /assets/logo.png \"公司Logo\"\n\nMarkdown允许直接插入HTML标签，用于精细控制样式：\n\n```markdown\n这是<span style=\"color:red\">红色文字</span>。\n<u>下划线</u>或<small>小号字</small>。\n```\n\n<span style=\"color:red\">红色文字</span>\n\n<u>下划线</u>或<small>小号字</small>\n\n\n\n#### 自动生成目录**（部分**工!具!**支持）\n\n使用 `[TOC]` 或特定标记（如Typora）：\n\n```markdown\n## 目录\n[TOC]\n\n## 第一章...\n```\n\n````\n```diff\n- 删除的行\n+ 新增的行\n```\n````\n\n1. 用HTML标签为文字添加绿色背景（`<span style=\"background:lightgreen\">`）\n\n\n\n<span style=\"background:lightgreen\">绿色背景</span>\n\n",
     "timestamp": "2025-04-09T15:55:34.863Z"
