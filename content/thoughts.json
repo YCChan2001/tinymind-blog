@@ -1,5 +1,10 @@
 [
   {
+    "id": "1744291700172",
+    "content": "![image.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-10/1744275454533.png?raw=true)\n\n第 1 步：将种子 URL 添加到 URL Frontier    \n第 2 步：HTML 下载器从 URL Frontier 获取 URL 列表。  \n第 3 步：HTML 下载器从 DNS 解析器获取 URL 的 IP 地址并开始下载。  \n第 4 步：Content Parser 解析 HTML 页面并检查页面是否格式错误。  \n第 5 步：内容经过解析和验证后，传递给“Content Seen?”组件。  \n第 6 步：“Content Seen”组件检查 HTML 页面是否已在存储中。  \n- 如果在存储中，这意味着不同URL 中的相同内容已经被处理过。在这种情况下，HTML 页面将被丢弃。  \n- 如果不在存储中，则系统之前没有处理过相同的内容。内容被传递给链接提取器。  \n\n第 7 步：网址提取器从 HTML 页面中提取网址。  \n第 8 步：将提取的网址传递给 URL 过滤器。  \n第 9 步：网址过滤后，传递给“URL Seen?”组件。  \n第 10 步：“URL Seen”组件检查一个URL是否已经在存储中，如果是，则之前处理过，不需要做任何事情。  \n第 11 步：如果一个 URL 以前没有被处理过，它被添加到 URL Frontier。",
+    "timestamp": "2025-04-10T13:28:20.172Z"
+  },
+  {
     "id": "1744216548370",
     "content": "> 301重定向。  \n301重定向表明，请求的URL被 \"永久 \"地移到了长URL上。由于是永久重定向，浏览器会缓存响应，对同一URL的后续请求将不会被发送到URL缩短服务上。相反，请求将直接被重定向到长网址服务器。  \n302重定向。  \n302重定向意味着URL被 \"暂时 \"移到长URL上，这意味着对同一URL的后续请求将首先被发送到URL缩短服务上。然后，它们会被重定向到长网址服务器。  \n如果优先考虑减少服务器负载，使用301重定向是有意义的，因为只有同一URL的第一个请求被发送到URL缩短服务器。然而，如果分析是重要的，302重定向是一个更好的选择，因为它可以更容易地跟踪点击率和点击的来源。\n\n![image.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-09/1744216331525.png?raw=true)  \n\n1.longURL 是输入的  \n2.系统检查 longURL 是否存在于数据库中  \n3.如果是的话，这意味着longURL之前被转换为shortURL。在这种情况下，从数据库中获取shortURL并将其返回给客户端。  \n4.如果不是，longURL是新的。一个新的唯一ID（主键）由唯一ID生成器生成。  \n5.使用base 62转换将ID转换为shortURL。  \n6.用ID、shortURL和longURL创建一个新的数据库记录。\n\n为了使流程更容易理解，让我们看一个具体的例子。  \n1.假设输入的longURL是：https://en.wikipedia.org/wiki/Systems_design  \n2.唯一ID生成器返回ID：2009215674938  \n3.使用62进制转换将ID转换为shortURL。ID（2009215674938）被转换为 \"zn9edcu\"。  \n4.将ID、shortURL和longURL保存到数据库。\n\n\n---https://learning-guide.gitbook.io/ ",
     "timestamp": "2025-04-09T16:35:48.370Z"
