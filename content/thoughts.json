@@ -1,5 +1,10 @@
 [
   {
+    "id": "1745482596072",
+    "content": "https://tingsongyu.github.io/PyTorch-Tutorial-2nd/chapter-1/1.2-Anaconda.html\n\n解释器--python.exe。   \npython.exe读取.py文件，解释成二进制文件，让CPU读懂，并运行。这就是解释器的作用，更直观的例子，python3的解释器是无法翻译python2语法的语句print \"Hello World\"的，因此不同的python.exe其实就对应了不同的环境。\n\nAnaconda是为方便使用Python而建立的一个软件包，包含常用的250多个工具包，多版本Python解释器和强大的虚拟环境管理工具，所以Anaconda被称为Python全家桶。\n\nanaconda常用命令  \n创建环境：conda create -n your_env_name python=X.X （X.X为python版本）  \neg: conda create -n pytorch_tutorial python=3.7  \n激活环境：source activate your_env_name  \neg: source activate pytorch_tutorial  \n退出环境：source deactivate  \n删除环境：conda remove -n your_env_name –all  \neg: conda remove -n pytorch_tutorial --all  \n查看已有虚拟环境：conda env list / conda info -e",
+    "timestamp": "2025-04-24T08:16:36.072Z"
+  },
+  {
     "id": "1744375763840",
     "content": "![image.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-11/1744375340128.png?raw=true)  \n\n服务1到N：它们代表不同的服务，通过通知服务器提供的API发送通知。  \n通知服务器: 它们提供以下功能：\n- 为服务提供发送通知的API。这些API只能由内部或经过验证的客户访问，以防止垃圾邮件。   \n\n- 进行基本验证，以核实电子邮件、电话号码等。  \n- 查询数据库或缓存以获取渲染通知所需的数据。  \n- 将通知数据放到消息队列中进行并行处理。  \n- 下面是一个发送电子邮件的API的例子：  \nPOST https://api.example.com/v/sms/send  \nRequest body：\n![image.png](https://github.com/YCChan2001/tinymind-blog/blob/main/assets/images/2025-04-11/1744375586834.png?raw=true)  \n- 缓存：用户信息、设备信息、通知模板都被缓存了。  \n- 数据库：它存储了关于用户、通知、设置等方面的数据。  \n- 消息队列：它们消除了组件之间的依赖性。当大量的通知被发送出去时，消息队列可以作为缓冲区。每种通知类型都被分配了一个不同的消息队列，所以一个第三方服务的中断不会影响其他通知类型。  \n- Workers：Workers 是一组服务器，它们从消息队列中拉取通知事件并将它们发送到相应的第三方服务。  \n- 第三方服务：在最初的设计中已经解释过。  \n- iOS, Android, SMS, Email：在最初的设计中已经说明。\n\n接下来，让我们来看看每个组件是如何一起工作来发送通知的。  \n1.一个服务调用通知服务器提供的API来发送通知  \n2.通知服务器从缓存或数据库中获取元数据，如用户信息、设备令牌和通知设置。  \n3.一个通知事件被发送到相应的队列进行处理。例如，一个iOS推送通知事件被发送到iOS PN队列中。  \n4.工作者从消息队列中获取通知事件。  \n5.工作者向第三方服务发送通知。  \n6.第三方服务向用户设备发送通知。",
     "timestamp": "2025-04-11T12:49:23.840Z"
